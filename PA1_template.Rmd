@@ -49,7 +49,7 @@ str(data)
 First we need to group the data according to the date, then sum all of the steps together. Since some of the data are missing, for those days where all of the data are missing, the *totalSteps* will be zero.
 ``` {r totalsteps, echo = TRUE}
 library(dplyr)
-totalSteps <- data %>% group_by(date) %>% summarize(sum = sum(steps, na.rm = TRUE))
+totalSteps <- data %>% group_by(date) %>% summarize(total = sum(steps, na.rm = TRUE))
 ```
 
 ### Make a histogram of the total number of steps taken each day
@@ -129,7 +129,7 @@ hist(new_totalSteps$sum, breaks = seq(1, 25000, by = 2500), col = "green", xlab 
 
 ### Calculate and report the mean and median total number of steps taken per day.
 Again, similar to the very first part of the analysis. Using the *mean* and *median* functions to calculate the values and report it in a single statement.
-``` {r \Mean&Median, echo = TRUE}
+``` {r Mean&Median, echo = TRUE}
 new_meanSteps <- with(new_totalSteps, mean(sum))
 new_medianSteps <- with(new_totalSteps, median(sum))
 ```
