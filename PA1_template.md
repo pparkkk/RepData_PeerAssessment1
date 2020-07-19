@@ -1,10 +1,9 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
-
 
 
 
@@ -74,7 +73,7 @@ In this part, I will use the base plotting system to plot the histogram.
 hist(totalSteps$total, breaks = seq(0, 25000, by = 2500), col = "green", main = "Total Steps Taken in a Day", xlab = "Total Steps", ylim = c(0,20))
 ```
 
-![](Figs/plotTotalSteps-1.png)<!-- -->
+![](Figures/plotTotalSteps-1.png)<!-- -->
   
 ### 2.3 Calculate and report the mean and median of the total number of steps taken per day
 In this part, I will calculate both the mean and median of the total number of steps each day, before reporting in a single statement.
@@ -101,7 +100,7 @@ by_interval <- data %>% group_by(interval) %>% summarize(mean = mean(steps, na.r
 with(by_interval, plot(interval, mean, type = "l", col = "darkblue", xlab = "Time Interval in a Day", ylab = "Average Number of Steps", main = "Average Number of Steps Taken by Intervals"))
 ```
 
-![](Figs/timeseries-1.png)<!-- -->
+![](Figures/timeseries-1.png)<!-- -->
   
 ### 3.2 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 In this part, we will use the *which.max* function to determine the row which the corresponding interval has the highest average number of steps. Subset out the interval. Then, it will be reported in a statement.
@@ -154,7 +153,7 @@ new_totalSteps <- data1 %>% group_by(date) %>% summarize(sum = sum(steps))
 hist(new_totalSteps$sum, breaks = seq(1, 25000, by = 2500), col = "green", xlab = "Total Steps", main = "Total Steps Taken in a Day", ylim = c(0,30))
 ```
 
-![](Figs/histogram-1.png)<!-- -->
+![](Figures/histogram-1.png)<!-- -->
   
 ### 4.5 Calculate and report the mean and median total number of steps taken per day.
 Again, similar to the very first part of the analysis. Using the *mean* and *median* functions to calculate the values and report it in the following statements.
@@ -209,7 +208,7 @@ g <- ggplot(by_day, aes(interval, steps))
 g + geom_line(color = "darkblue") + facet_wrap(day ~ ., nrow = 2, ncol = 1) + labs(x = "Time Interval", y = "Average Number of Steps", title = "Average Number of Daily Steps on Weekday VS Weekend")
 ```
 
-![](Figs/panelplot-1.png)<!-- -->
+![](Figures/panelplot-1.png)<!-- -->
   
 
 

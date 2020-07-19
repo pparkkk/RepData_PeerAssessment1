@@ -1,15 +1,14 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
 ```{r setoptions, echo = FALSE}
 library(knitr)
 knitr::opts_chunk$set(message = FALSE)
-knitr::opts_chunk$set(fig.path='Figs/')
+knitr::opts_chunk$set(fig.path='Figures/')
 ```
-
 
 
 ## 1. Loading and preprocessing the data  
